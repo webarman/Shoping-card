@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- css  -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Shoping</title>
+</head>
+
+<body>
+    <header class="container">
+        <h2 class="title">My shopping cart</h2>
+    </header>
+    <main class="container">
+        <section id="container" class="container">
+            <div class="phone-section mt-5 row">
+                <div class="first-section col-lg-6">
+                    <div class="d-flex align-items-center ms-5">
+                        <img width="115" height="134" class="img-fluid" src="image/product-1.png" alt="">
+                        <h5 class="ms-5 fw-bold">iPhone 11 128GB Black</h5>
+                    </div>
+                </div>
+                <div class="second-section col-lg-6">
+                    <div class="d-flex align-items-center justify-content-around">
+                        <div>
+                            <button id="phone-minus">
+                                <i class="fas fa-minus me-3"></i>
+                            </button>
+                            <input type="number" name="" value="1" id="phone-input">
+                            <button id="phone-plus">
+                                <i class="fas fa-plus ms-3"></i>
+                            </button>
+                        </div>
+                        <div>
+                            <h2>$<span id="phone-price">1219</span></h2>
+                        </div>
+                        <div>
+                            <img width="25" height="25" src="image/remove.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="phone-section mt-5 row">
+                <div class="first-section col-lg-6">
+                    <div class="d-flex align-items-center ms-5">
+                        <img width="115" height="134" class="img-fluid" src="image/product-2.png" alt="">
+                        <h5 class="ms-5 fw-bold">iPhone 11 Silicone Case - Black</h5>
+                    </div>
+                </div>
+                <div class="second-section col-lg-6">
+                    <div class="d-flex align-items-center justify-content-around">
+                        <div>
+                            <button id="case-minus">
+                                <i class="fas fa-minus me-3"></i>
+                            </button>
+                            <input type="number" name="" value="1" id="case-input">
+                            <button id="case-plus">
+                                <i class="fas fa-plus ms-3"></i>
+                            </button>
+                        </div>
+                        <div>
+                            <h2>$<span id="case-price">59</span></h2>
+                        </div>
+                        <div>
+                            <img width="25" height="25" src="image/remove.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 total">
+                <div class="col-lg-12 d-flex justify-content-between">
+                    <h5>Subtotal:</h5>
+                    <h5>$<span id="subtotal">1278</span></h5>
+                </div>
+                <div class="col-lg-12 d-flex justify-content-between">
+                    <h5>Tax:</h5>
+                    <h5>$<span id="tax">127.8</span></h5>
+                </div>
+                <div class="col-lg-12 d-flex justify-content-between">
+                    <h5>Total:</h5>
+                    <h5>$<span id="totalAmount">1278</span></h5>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function a() {
+            const phonePrice = document.getElementById('phone-price')
+            const phonePriceText = parseInt(phonePrice.innerText)
+            const casePrice = document.getElementById('case-price')
+            const casePriceText = parseInt(casePrice.innerText)
+            //subtotal
+            const subtotal = document.getElementById('subtotal');
+            const subTotalPrice = phonePriceText + casePriceText;
+            subtotal.innerText = subTotalPrice
+            // tax
+            const tax = document.getElementById('tax');
+            const taxTotal = subTotalPrice / 10;
+            tax.innerText = taxTotal
+            //total
+            const totalAmount = document.getElementById('totalAmount');
+            totalAmount.innerText = subTotalPrice + taxTotal
+
+        }
+    </script>
+
+    <script src="js/node.js"></script>
+</body>
+
+</html>
